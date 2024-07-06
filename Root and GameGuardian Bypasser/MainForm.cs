@@ -1,15 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Security.Principal;
-using System.Diagnostics;
-
 namespace 좀비고_보안_우회
 {
     public partial class MainForm : Form
@@ -44,6 +32,8 @@ namespace 좀비고_보안_우회
             pro.StandardInput.Write(@"mount -o remount r,w /data" + Environment.NewLine);
             pro.StandardInput.Write(@"cd system/xbin" + Environment.NewLine);
             pro.StandardInput.Write(@"mv su su2" + Environment.NewLine);
+            pro.StandardInput.Write(@"cd system/bin" + Environment.NewLine);
+            pro.StandardInput.Write(@"mv su su2" + Environment.NewLine);
             pro.StandardInput.Write(@"cd /data/app" + Environment.NewLine);
             pro.StandardInput.Write(@"mv catch_.me_.if_.you_.can_-1 acatch_.me_.if_.you_.can_-1" + Environment.NewLine);
 
@@ -76,6 +66,8 @@ namespace 좀비고_보안_우회
             pro.StandardInput.Write(@"mount -o remount r,w /system" + Environment.NewLine);
             pro.StandardInput.Write(@"mount -o remount r,w /data" + Environment.NewLine);
             pro.StandardInput.Write(@"cd system/xbin" + Environment.NewLine);
+            pro.StandardInput.Write(@"mv su2 su" + Environment.NewLine);
+            pro.StandardInput.Write(@"cd system/bin" + Environment.NewLine);
             pro.StandardInput.Write(@"mv su2 su" + Environment.NewLine);
             pro.StandardInput.Write(@"cd /data/app" + Environment.NewLine);
             pro.StandardInput.Write(@"mv acatch_.me_.if_.you_.can_-1 catch_.me_.if_.you_.can_-1" + Environment.NewLine);
